@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="verPreguntas.xsl" ?>
+<assessmentItems>
+	<assessmentItem complexity="2" subject="Web">
+		<itemBody>
+			<p>Tag HTML para a&#xF1;adir un formulario</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				FORM
+			</value>
+		</correctResponse>
+	</assessmentItem>
+	<assessmentItem complexity="4" subject="Internet">
+		<itemBody>
+			<p>Este protocolo acabar&#xE1; funcionando
+			incluso entre dos latas unidas por un cord&#xF3;n</p>
+		</itemBody>
+		<correctResponse>
+			<value>
+				TCP/IP
+			</value>
+		</correctResponse>
+	</assessmentItem>
+<assessmentItem complexity="5" subject="Prueba"><itemBody><p>Funciona?</p></itemBody><correctResponse><value>Puede</value></correctResponse></assessmentItem>
+<assessmentItem complexity="1" subject="prueba"><itemBody><p>funciona?</p></itemBody><correctResponse><value>parece</value></correctResponse></assessmentItem>
+<assessmentItem complexity="No tiene Complejidad" subject="aaa"><itemBody><p>fdfdfd</p></itemBody><correctResponse><value>agrghwsheth</value></correctResponse></assessmentItem><assessmentItem complexity="3" subject="Que pasara"><itemBody><p>que misterios habra</p></itemBody><correctResponse><value>puede ser mi gran nocheeeee</value></correctResponse></assessmentItem><assessmentItem complexity="No tiene Complejidad" subject="foooootoooo"><itemBody><p>para toooodooos</p></itemBody><correctResponse><value>suuuiii</value></correctResponse></assessmentItem><assessmentItem complexity="2" subject="pene"><itemBody><p>pne</p></itemBody><correctResponse><value>pene523532</value></correctResponse></assessmentItem></assessmentItems>
