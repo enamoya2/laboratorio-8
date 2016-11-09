@@ -3,8 +3,8 @@ require_once('../nusoap/lib/nusoap.php');
 require_once('../nusoap/lib/class.wsdlcache.php');
 
 function conect(){
-	//$mysqli =mysqli_connect("mysql.hostinger.es","u875296919_root","rootena","u875296919_usu") or die(mysql_error()); //hostinger
-	$mysqli = mysqli_connect("localhost", "root", "", "quiz");  //local
+	$mysqli =mysqli_connect("mysql.hostinger.es","u875296919_root","rootena","u875296919_usu") or die(mysql_error()); //hostinger
+	//$mysqli = mysqli_connect("localhost", "root", "", "quiz");  //local
 	if (!$mysqli) {
 		echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
 		exit;
@@ -162,8 +162,8 @@ function validarEmail($email){
 function comprobarPass($pass, $cod){
 	//creamos el objeto de tipo soapclient.
 	//donde se encuentra el servicio SOAP que vamos a utilizar.
-	$soapclient = new nusoap_client('http://localhost/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
-	//$soapclient = new nusoap_client('http://enamoya.esy.es/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
+	//$soapclient = new nusoap_client('http://localhost/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
+	$soapclient = new nusoap_client('http://enamoya.esy.es/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
 	//Llamamos la función que habíamos implementado en el Web Service
 	//e imprimimos lo que nos devuelve
 	$result = $soapclient->call('comprobarContrasena', array('pass'=>$pass, 'cod'=>$cod));
