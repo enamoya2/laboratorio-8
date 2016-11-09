@@ -33,18 +33,18 @@ function validatePassword(){
 	return true;
 }
 
+function validateCode(){
+	var n = document.getElementById("ticket").value;
+	var re = /^\d{4}$/;
+	return re.test(n);
+}
+
 function validar(){
-	vervalores();
-	var resto;
-	var frm = document.getElementById("registro");
 	var n = document.getElementById("especialidad").value;
-	if(n == document.getElementById("especialidad").options[3].value)
-		resto = 3;
-	else
-		resto = 4;
-	for (i=0;i<frm.elements.length-resto;i++){
-		if ((frm.elements[i].value.length == 0) || (/^\s*$/.test(frm.elements[i].value))){
-			alert("Rellena los campos obligatorios");
+	if(n == document.getElementById("especialidad").options[3].value){
+		var extra = document.getElementById("otraesp");
+		if ((extra.value.length == 0) || (/^\s*$/.test(extra.value))){
+			alert("Rellena la especialidad");
 			return false;
 		}
 	}
@@ -62,6 +62,10 @@ function validar(){
 	}
 	if (validateTlf() == false){
 		alert("El telefono debe tener 9 digitos y comenzar por 6, 7, 8 y 9");
+			return false;
+	}
+	if (validateCode() == false){
+		alert("El Codigo debe tener 4 digitos");
 			return false;
 	}
 	return true;

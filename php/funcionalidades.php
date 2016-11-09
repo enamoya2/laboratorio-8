@@ -152,21 +152,21 @@ function imprimirPreguntasBD($email){
 function validarEmail($email){
 	//creamos el objeto de tipo soapclient.
 	//donde se encuentra el servicio SOAP que vamos a utilizar.
-	$soapclient = new nusoap_client('http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php?wsdl',false);
+	$soapclient = new nusoap_client('http://cursodssw.hol.es/comprobarmatricula.php?wsdl',false);
 	//Llamamos la función que habíamos implementado en el Web Service
 	//e imprimimos lo que nos devuelve
 	$result = $soapclient->call('comprobar', array('x'=>$email));
 	return $result;
 }
 
-function comprobarPass($pass){
+function comprobarPass($pass, $cod){
 	//creamos el objeto de tipo soapclient.
 	//donde se encuentra el servicio SOAP que vamos a utilizar.
 	$soapclient = new nusoap_client('http://localhost/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
 	//$soapclient = new nusoap_client('http://enamoya.esy.es/ProyectoSW/soapServicios/comprobarContrasena.php?wsdl',false);
 	//Llamamos la función que habíamos implementado en el Web Service
 	//e imprimimos lo que nos devuelve
-	$result = $soapclient->call('comprobarContrasena', array('pass'=>$pass));
+	$result = $soapclient->call('comprobarContrasena', array('pass'=>$pass, 'cod'=>$cod));
 	return $result;
 }
 ?>

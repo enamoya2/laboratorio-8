@@ -81,6 +81,7 @@ function registrarUser(){
 	$mysqli = conect();
 	$email=$_POST['email'];
 	$nombre=$_POST['nombre'];
+	$cod=$_POST['ticket'];
 	$password=$_POST['password'];
 	$tlf=$_POST['tlf'];
 	$especialidad=$_POST['especialidad'];
@@ -107,7 +108,7 @@ function registrarUser(){
 		return;
 	}
 
-	if(validatePassword($password) == false || strcmp(comprobarPass($password),"INVALIDA")==0){
+	if(validatePassword($password) == false || strcmp(comprobarPass($password,$cod),"INVALIDA")==0 || strcmp(comprobarPass($password,$cod),"USUARIO NO AUTORIZADO")==0){
 		echo 'Fallo, <a href="registro.php">Volver a intentar</a>.';
 		return;
 	}

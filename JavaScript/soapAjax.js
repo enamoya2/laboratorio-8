@@ -1,4 +1,5 @@
 
+
 function validarEmail(input){
 	if($('#email').val()== ""){
 		$('#email').css('background-color', 'white');
@@ -36,18 +37,24 @@ function validarEmail(input){
 			});
 }
 
-function validarPass(input){
+function validarPass(){
+	var input = document.getElementById("password");
 	if($('#password').val()== ""){
 		$('#password').css('background-color', 'white');
+		$('#ticket').css('background-color', 'white');
 		$('#passVal').html("NO");
 		$('#check1').attr('src', '.');
 		$('#check1').hide();
 		input.setCustomValidity('');
 		return;
 	}
-		
+	if($('#ticket').val()== ""){
+		$('#ticket').css('background-color', 'white');
+		return;
+	}
 		var parametros = {
-			"pass" : $('#password').val()
+			"pass" : $('#password').val(),
+			"cod" : $('#ticket').val()
 		};
 		$.ajax({
 		data: parametros,
@@ -56,12 +63,21 @@ function validarPass(input){
 		success: function (response) {
 						if(response == "VALIDA"){
 							$('#password').css('background-color', '#66ff33');
+							$('#ticket').css('background-color', '#66ff33');
 							$('#check1').attr('src', '../Images/Tick_verde.png');
 							$('#check1').show();
 							input.setCustomValidity('');
 						}
+						else if(response == "USUARIO NO AUTORIZADO"){
+							$('#password').css('background-color', '#ff00ff');
+							$('#ticket').css('background-color', '#ff00ff');
+							input.setCustomValidity('Ticket no valido');
+							$('#check1').attr('src', '../Images/prohibited.png');
+							$('#check1').show();
+						}
 						else{
 							$('#password').css('background-color', 'red');
+							$('#ticket').css('background-color', '#66ff33');
 							input.setCustomValidity('Pass incorrecto');
 							$('#check1').attr('src', '../Images/Cruz_roja.png');
 							$('#check1').show();

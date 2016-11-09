@@ -6,7 +6,7 @@
 		<title> Pagina de registro </title>
 		<script type="text/javascript" src="../JavaScript/Validaciones.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="../JavaScript/soapAjax.js"></script>
+		<script type="text/javascript" src="../JavaScript/soapAjax.js"></script>  
 	</head>
 	<body>
 		<div id='page-wrap'>
@@ -31,11 +31,17 @@
 				</TR>
 				<TR>
 					<TD>Password (*)</TD>
-					<TD><INPUT class="inputs" type=password name="password" id="password" onchange="validarPass(this)" required>
+					<TD><INPUT class="inputs" type=password name="password" id="password" onchange="validarPass()" required>
 						<img id="check1" class="check" src="" style="display: none"/>
 						<div id="passVal" style="display: none"></div>
 					</TD>
 				</TR>
+				
+				<TR>
+					<TD>Ticket (*)</TD>
+					<TD><INPUT class="inputs" type=text name="ticket" id="ticket" onchange="validarPass()" required></TD>
+				</TR>
+				
 				<TR>
 					<TD>Numero de telefono (*)</TD>
 					<TD><INPUT class="inputs" type=text name="tlf" id="tlf" required></TD>
