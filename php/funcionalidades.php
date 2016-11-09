@@ -169,4 +169,11 @@ function comprobarPass($pass, $cod){
 	$result = $soapclient->call('comprobarContrasena', array('pass'=>$pass, 'cod'=>$cod));
 	return $result;
 }
+
+function ownIP(){
+ $ip= file_get_contents('http://myip.eu/');
+ $ip= substr($ip,strpos($ip,'<font size=5>')+14);
+ $ip= substr($ip,0,strpos($ip,'<br'));
+ return $ip;
+}
 ?>

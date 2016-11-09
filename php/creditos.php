@@ -35,8 +35,8 @@
 					</div>
 					<div>
 						<h2 align="center"> GEOLOCALIZACION </h2>
-						<button id="Mapa_Cliente" onclick="mapa('<?php GetUserIP(); ?>')">Cliente</button>
-						<button id="Mapa_Servidor" onclick="mapa('<?php $_SERVER['SERVER_ADDR']; ?>')">Servidor</button>
+						<button id="Mapa_Cliente" onclick="mapa('<?php echo GetUserIP(); ?>')">Cliente</button>
+						<button id="Mapa_Servidor" onclick="mapa('<?php echo $_SERVER['SERVER_ADDR']; ?>')">Servidor</button>
 						<div id="map" style="display: none"></div>
 					</div>
 			</section>
